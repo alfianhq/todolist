@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
+import uuid from 'uuid';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TodoInput from './component/TodoInput';
+import TodoList from './component/TodoList';
 
 export default class App extends Component {
 	render() {
 		return (
-			<React.Fragment>
-				<h1>hi form apps</h1>
-			</React.Fragment>
+			<div>
+				<div className='container'>
+					<div className='row'>
+						<TodoInput></TodoInput>
+						<TodoList></TodoList>
+					</div>
+				</div>
+			</div>
 		);
 	}
 }
