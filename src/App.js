@@ -11,16 +11,37 @@ export default class App extends Component {
 			{id: 2, title: 'break fast'},
 		],
 		id: uuid(),
+		item: '',
+		editItem: false,
 	};
 
+	handleChange = e => console.log('handle change');
+	handleSubmit = e => console.log('handle submit');
+	clearList = () => console.log('clearlist method');
+	handleDelete = id => console.log(`handle delet ${id}`);
+	handleEdit = id => console.log(`handle edit ${id}`);
+
 	render() {
-		console.log(this.state);
 		return (
 			<div>
 				<div className='container'>
 					<div className='row'>
-						<TodoInput></TodoInput>
-						<TodoList></TodoList>
+						<div className='col-10 mx-auto col-md-8 mt-5'>
+							<h3 className='text-capitalize text-center'></h3>
+							<TodoInput
+								item={this.state.item}
+								handleChange={this.handleChange}
+								handleSubmit={this.handleSubmit}
+								editItem={this.state.editItem}
+							/>
+
+							<TodoList
+								item={this.state.item}
+								clearList={this.clearList}
+								handleDelete={this.handleDelete}
+								handleEdit={this.handleEdit}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
