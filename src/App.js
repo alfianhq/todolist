@@ -36,13 +36,18 @@ class App extends Component {
 		});
 	};
 	handleDelete = id => {
+		// render selain id yang di seleksi
+		// maka yang di tamilkan yang tidak terseleksi
 		const filteredItems = this.state.items.filter(item => item.id !== id);
 		this.setState({
 			items: filteredItems,
 		});
 	};
 	handleEdit = id => {
+		// render selain id yang di seleksi
+		// maka yang di tamilkan yang tidak terseleksi
 		const filteredItems = this.state.items.filter(item => item.id !== id);
+		// ambil ynag diselesi
 		const selectedItem = this.state.items.find(item => item.id === id);
 		this.setState({
 			items: filteredItems,
